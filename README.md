@@ -27,7 +27,7 @@ A responsive movie review application built with **React JS** and **TailwindCSS*
 
 ## 🌐 Live Demo (Optional)
 
-[Click here to view live project](https://your-live-site-url.com)
+[view live link](https://suryasmoviereview.netlify.app)
 
 ---
 
