@@ -1,12 +1,33 @@
-# React + Vite
+# 🎬 Movie Review App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive movie review application built with **React JS** and **TailwindCSS**, allowing users to search for movies, filter by genre or year, view details, and submit star-based ratings.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Search** movies by title using TMDb API
+- 🎯 **Filter** results by genre and release year
+- 📝 **Detailed view** with movie description and poster
+- ⭐ **Star-based rating system** for user interaction
+- 🌓 **Dark mode ready** UI with TailwindCSS
+- 📱 **Fully responsive** layout for mobile and desktop
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React JS** – Component-based frontend
+- **TailwindCSS** – Utility-first styling
+- **TMDb API** – Movie data and search
+- **React Hooks** – State management (`useState`, `useEffect`)
+- **Custom components** – `MovieCard`, `MovieDetailModal`, `StarRating`, etc.
+
+---
+
+## 🌐 Live Demo (Optional)
+
+[Click here to view live project](https://your-live-site-url.com)
+
+---
+
