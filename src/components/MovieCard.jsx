@@ -4,10 +4,17 @@ import StarRating from "./StarRating";
 
 export default function MovieCard({ movie, onRateMovie }) {
   const [showModal, setShowModal] = useState(false);
-  const [userRating, setUserRating] = useState(0);
+  const [userRating, setUserRating] = useState(() => {
+    const savedRatings = JSON.parse(localStorage.getItem("movieRatings")) || {};
+    return savedRatings[movie.id] || 0;
+  });
 
   const handleRating = (rating) => {
     setUserRating(rating);
+    const savedRatings = JSON.parse(localStorage.getItem("movieRatings")) || {};
+    savedRatings[movie.id] = rating;
+    localStorage.setItem("movieRatings", JSON.stringify(savedRatings));
+
     if (onRateMovie) {
       onRateMovie(movie.id, rating);
     }
@@ -50,7 +57,7 @@ export default function MovieCard({ movie, onRateMovie }) {
             </span>
           </div>
 
-          <div className="mt-2">
+          <div className="mt-2" onClick={(e) => e.stopPropagation()}>
             <StarRating
               rating={userRating}
               onRate={handleRating}
