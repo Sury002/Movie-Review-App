@@ -31,12 +31,14 @@ export default function Home() {
     "western",
   ];
 
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+
   const fetchMovies = async () => {
     setIsLoading(true);
     setError(null);
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=f1070e485e007f9f83d9f971000e0f10&query=${
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${
           query || "popular"
         }&include_adult=false`
       );

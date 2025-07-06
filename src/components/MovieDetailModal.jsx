@@ -9,7 +9,9 @@ export default function MovieDetailModal({
 }) {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); 
+
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -17,7 +19,7 @@ export default function MovieDetailModal({
         setLoading(true);
         setError(null);
         const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieId}?api_key=f1070e485e007f9f83d9f971000e0f10&append_to_response=credits`
+          `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=credits`
         );
         if (!res.ok) throw new Error("Failed to fetch movie details");
         const data = await res.json();
