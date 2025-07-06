@@ -179,12 +179,13 @@ export default function MovieDetailModal({
                             src={
                               person.profile_path
                                 ? `https://image.tmdb.org/t/p/w200${person.profile_path}`
-                                : "/person-placeholder.jpg"
+                                : "https://placehold.co/300x450?text=No+Image"
                             }
                             alt={person.name}
                             className="w-full h-24 sm:h-32 object-cover rounded-md mb-2"
                             onError={(e) => {
-                              e.target.src = "/person-placeholder.jpg";
+                              e.target.onerror = null; 
+                              e.target.src = "https://placehold.co/300x450?text=No+Image";
                             }}
                           />
                           <p className="text-sm font-medium dark:text-white truncate">

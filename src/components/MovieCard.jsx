@@ -24,12 +24,13 @@ export default function MovieCard({ movie, onRateMovie }) {
             src={
               movie.poster_path
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                : "/placeholder.jpg"
+                : "https://placehold.co/300x450?text=No+Image"
             }
             alt={movie.title}
             className="w-full h-72 object-cover"
             onError={(e) => {
-              e.target.src = "/placeholder.jpg";
+              e.target.onerror = null;
+              e.target.src = "https://placehold.co/300x450?text=No+Image";
             }}
           />
           {movie.vote_average > 0 && (
